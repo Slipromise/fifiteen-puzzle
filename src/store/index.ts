@@ -1,7 +1,14 @@
 import { configureStore } from "@reduxjs/toolkit";
+import game from "./gameSlice";
+import * as actionCreators from "./mockActions";
 
 export const store = configureStore({
-  reducer: {},
+  reducer: {
+     game,
+  },
+  devTools:{
+    actionCreators
+  }
 });
 
 // Infer the `RootState` and `AppDispatch` types from the store itself
