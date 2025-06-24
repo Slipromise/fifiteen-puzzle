@@ -44,9 +44,9 @@ function isSolvable(puzzle: number[]): boolean {
 function generateSolvablePuzzle(matrix?: number[]): number[] {
   let puzzle = matrix ? matrix : [...FINISH_MATRIX];
 
-  puzzle = [...puzzle].sort(() => Math.random() - 0.5);
-
-  console.log(isSolvable(puzzle));
+  do {
+    puzzle = [...puzzle].sort(() => Math.random() - 0.5);
+  } while (!isSolvable(puzzle));
 
   return puzzle;
 }
