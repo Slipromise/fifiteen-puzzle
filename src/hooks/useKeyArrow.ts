@@ -24,5 +24,5 @@ export default function useKeyArrow() {
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, []);
+  }, [dispatch]);
 }
